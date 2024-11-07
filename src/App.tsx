@@ -51,7 +51,7 @@ export const App: React.FC = () => {
     setIsReversed(prev => !prev);
   };
 
-  const resetButton = () => {
+  const resetArray = () => {
     setArray([...goodsFromServer]);
     setCurrentSort(SortType.Default);
     setIsReversed(false);
@@ -88,7 +88,7 @@ export const App: React.FC = () => {
           <button
             type="button"
             className="button is-danger is-light"
-            onClick={resetButton}
+            onClick={resetArray}
           >
             Reset
           </button>
@@ -96,8 +96,8 @@ export const App: React.FC = () => {
       </div>
 
       <ul>
-        {copyArray.map((item, index) => (
-          <li key={index} data-cy="Good">
+        {copyArray.map(item => (
+          <li key={item} data-cy="Good">
             {item}
           </li>
         ))}
